@@ -1,4 +1,4 @@
-# M2Former for Event-based Space Object Detection
+# M²Former for Event-based Space Object Detection
 
 ## 1. Acknowledgement
 
