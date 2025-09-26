@@ -102,7 +102,7 @@ After training, the performance of the models can be evaluated in two ways to ob
 python map_metric.py --model_dir /path/to/model_training_dir
 ```
 **Note:** Experimental results reported in the paper are obtained by this way. 
-In particular, APs (small object detection performance) is calculated by [COCOAPI](https://github.com/cocodataset/cocoapi).
+In particular, **APs** (small object detection performance) is calculated by [COCOAPI](https://github.com/cocodataset/cocoapi).
 
 (2) Run `val.py` with the trained weights to evaluate the model on the validation set.
 ```bash
