@@ -21,23 +21,31 @@ pip install -e .
 pip install -r requirements.txt
 ```
 
-## 3. Pretrained Models (Inference)
+
+## 3. Dataset
+
+The experiments in this project are conducted on the **E-SPARK** dataset. Please [download](https://zenodo.org/) it before running inference or training.
+
+
+## 4. Pretrained Models (Inference)
 
 We provide several pretrained models that can be directly used for inference with **`predict.py`**:
 <table>
   <tr>
     <td><a href="https://drive.google.com/file/d/1i-ENNkdQppkNj898WfxqBavr45fCkerM/view?usp=drive_link">
         m2former_espark640_histogram_baseline</a></td>
-    <td><a href="https://drive.google.com/file/d/1OUw2fNyQj-imXCznUgu8Yt2TYRi3k8A0/view?usp=drive_link">
-        m2former_espark640_histogram_aal</a></td>
-    <td><a href="https://drive.google.com/file/d/1vJW7i2DJ2c9PfntmRycf6V5GEwu83Vw2/view?usp=drive_link">
-        m2former_espark640_histogram_aal_aug</a></td>
-  </tr>
-  <tr>
     <td><a href="https://drive.google.com/file/d/1DiFkDuhitIqgueLSqDuvXDKK7OV7Xs7m/view?usp=drive_link">
         m2former_espark320_histogram_baseline</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://drive.google.com/file/d/1OUw2fNyQj-imXCznUgu8Yt2TYRi3k8A0/view?usp=drive_link">
+        m2former_espark640_histogram_aal</a></td>
     <td><a href="https://drive.google.com/file/d/12wOeAB7QRQHsnXeE7SPhteLkN7ghiydg/view?usp=drive_link">
         m2former_espark320_histogram_aal</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://drive.google.com/file/d/1vJW7i2DJ2c9PfntmRycf6V5GEwu83Vw2/view?usp=drive_link">
+        m2former_espark640_histogram_aal_aug</a></td>
     <td><a href="https://drive.google.com/file/d/1V937GuSTW0j5fpK_7WWOZXUSiWBME6Uf/view?usp=drive_link">
         m2former_espark320_histogram_aal_aug</a></td>
   </tr>
@@ -65,7 +73,7 @@ python predict.py \
 ```
 
 
-## 4. Model Training
+## 5. Model Training
 
 This project supports training with both **RT-DETR** and **YOLO** frameworks.
 
@@ -85,7 +93,7 @@ python train_yolo.py
 **Note:** Use the pretrained models from Ultralytics.
 
 
-## 5. Model Validation
+## 6. Model Validation
 
 After training, the performance of the models can be evaluated in two ways to obtain **AP@50** and **AP@50:95**.
 
