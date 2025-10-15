@@ -104,14 +104,13 @@ python map_metric.py --model_dir /path/to/model_training_dir
 **Note:** Experimental results reported in the paper are obtained by this way. 
 In particular, **APs** (small object detection performance) is calculated by [COCOAPI](https://github.com/cocodataset/cocoapi).
 
-(2) Run `val.py` with the trained weights to evaluate the model on the validation set.
+(2) Run `val.py` with the trained weights to evaluate the model on the validation or test set.
 ```bash
 # default config inside validate.py
 python validate.py
 ```
-**Note:** Metrics computed by `val.py` are slightly lower than those in the training log (`results.csv`), since `val.py` runs 
-a stricter evaluation with different batch size and eval mode, while the log records the best epoch metrics during training. 
-Nevertheless, `val.py` reports **per-class AP metrics**, which are not available in the training log.
+**Note:** Metrics computed by `val.py` are slightly lower than those in the training log (`results.csv`), since `val.py` runs a stricter evaluation with different eval mode, 
+while the log records the best epoch metrics during training. Nevertheless, `val.py` reports **per-class AP metrics**, which are not available in the training log.
 
 
 ## Citations
