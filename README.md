@@ -109,8 +109,8 @@ In particular, **APs** (small object detection performance) is calculated by [CO
 # default config inside validate.py
 python validate.py
 ```
-**Note:** Metrics computed by `val.py` are slightly lower than those in the training log (`results.csv`), since `val.py` runs a stricter evaluation with different eval mode, 
-while the log records the best epoch metrics during training. Nevertheless, `val.py` reports **per-class AP metrics**, which are not available in the training log.
+**Note:** Metrics computed by `val.py` are slightly lower than those in the training log, since `val.py` runs a stricter evaluation with different eval mode, 
+while the log records the best metrics during training. Nevertheless, `val.py` reports **per-class AP metrics**, which are not available in the training log.
 
 
 ## Citations
