@@ -1,0 +1,45 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+
+# Ultralytics RT-DETR-ResNet18 hybrid object detection model with P3/8 - P5/32 outputs
+
+# Parameters
+nc: 80 # number of classes
+scales: # model compound scaling constants, i.e. 'model=yolov8n-cls.yaml' will call yolov8-cls.yaml with scale 'n'
+  # [depth, width, max_channels]
+  l: [1.00, 1.00, 1024]
+
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, ConvNormLayer, [16, 3, 2, 1, 'silu']] # 0-P1
+  - [-1, 1, ConvNormLayer, [32, 3, 2, 1, 'silu']] # 1
+
+  - [-1, 2, M2FormerBlocks, [32,  M2FormerBasicBlock, 2, True, True, True]] # 2
+  - [-1, 2, M2FormerBlocks, [64,  M2FormerBasicBlock, 3, True, True, True]] # 3-P3/8
+  - [-1, 2, M2FormerBlocks, [128, M2FormerBasicBlock, 4, True, True, True]] # 4-P4/16
+  - [-1, 2, M2FormerBlocks, [256, M2FormerBasicBlock, 5, True, True, True]] # 5-P5/32
+
+head:
+  - [-1, 1, Conv, [256, 1, 1, None, 1, 1, False]] # 6 input_proj.2
+  - [-1, 1, AIFI, [1024, 8]] # 7
+  - [-1, 1, Conv, [256, 1, 1]] # Y5 (8), lateral_convs.0
+
+  - [-1, 1, nn.Upsample, [None, 2, 'nearest']] # 9
+  - [4, 1, Conv, [256, 1, 1, None, 1, 1, False]] # 10 input_proj.1
+  - [[-2, -1], 1, Concat, [1]] # 11 cat backbone P4
+  - [-1, 3, RepC3, [256, 0.5]] # 12, fpn_blocks.0
+  - [-1, 1, Conv, [256, 1, 1]] # Y4 (13), lateral_convs.1
+
+  - [-1, 1, nn.Upsample, [None, 2, 'nearest']] # 14
+  - [3, 1, Conv, [256, 1, 1, None, 1, 1, False]] # 15 input_proj.0
+  - [[-2, -1], 1, Concat, [1]] # 16 cat backbone P3
+  - [-1, 3, RepC3, [256, 0.5]] # X3 (17), fpn_blocks.1
+
+  - [-1, 1, Conv, [256, 3, 2]] # 18, downsample_convs.0
+  - [[-1, 13], 1, Concat, [1]] # 19 cat Y4
+  - [-1, 3, RepC3, [256, 0.5]] # F4 (20), pan_blocks.0
+
+  - [-1, 1, Conv, [256, 3, 2]] # 21, downsample_convs.1
+  - [[-1, 8], 1, Concat, [1]] # 22 cat Y5
+  - [-1, 3, RepC3, [256, 0.5]] # F5 (23), pan_blocks.1
+
+  - [[17, 20, 23], 1, RTDETRDecoder, [nc, 256, 300, 4, 8, 3]] # Detect(P3, P4, P5)

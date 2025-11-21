@@ -1,0 +1,9 @@
+# Train/val/test sets
+path: /home/pan/Datasets/E-SPARK/testbed/normal  # dataset root dir
+train: None
+val: None
+test: events  # test data
+
+# Classes
+names:
+  0: Satellite

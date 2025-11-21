@@ -1,0 +1,19 @@
+# Train/val/test sets
+path: /home/data/E-SPARK/dvs640  # dataset root dir
+train: hdf5/train  # train events (relative to 'path')
+val: hdf5/validate  # val events (relative to 'path')
+test: hdf5/test  # test events (optional)
+
+# Classes
+names:
+  0: AcrimSat
+  1: Aquarius
+  2: Aura
+  3: Calipso
+  4: CloudSat
+  5: CubeSat
+  6: Debris
+  7: Jason
+  8: Sentinel-6
+  9: Terra
+  10: TRMM

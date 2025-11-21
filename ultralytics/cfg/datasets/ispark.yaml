@@ -1,0 +1,19 @@
+# Train/val/test sets
+path: /home/pan/Datasets/E-SPARK  # dataset root dir
+train: images/train  # train events (relative to 'path')
+val: images/validate  # val events (relative to 'path')
+test: images/test  # test events (optional)
+
+# Classes
+names:
+  0: AcrimSat
+  1: Aquarius
+  2: Aura
+  3: Calipso
+  4: CloudSat
+  5: CubeSat
+  6: Debris
+  7: Jason
+  8: Sentinel-6
+  9: Terra
+  10: TRMM

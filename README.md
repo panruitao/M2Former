@@ -24,10 +24,10 @@ pip install -r requirements.txt
 
 ## 3. Dataset
 
-The experiments in this project are conducted on the **E-SPARK** dataset. Please [download](https://zenodo.org/) it before running inference or training.
+The experiments in this project are conducted on the **E-SPARK** dataset. Please [download](https://zenodo.org/records/15770179) it before running inference or training.
 
 
-## 4. Pretrained Models (Inference)
+## 4. Pretrained Models
 
 We provide several pretrained models that can be directly used for inference with **`predict.py`**:
 <table>
@@ -95,19 +95,18 @@ python train_yolo.py
 
 ## 6. Model Validation
 
-After training, the performance of the models can be evaluated in two ways to obtain **AP@50** and **AP@50:95**.
-
 (1) Use `map_metric.py` to parse the training log (`results.csv`) and report the epoch with the highest AP@50:95.
 ```bash
 python map_metric.py --model_dir /path/to/model_training_dir
 ```
 
-(2) Run `val.py` with the trained weights to evaluate the model on the validation or test set.
+(2) Run `val.py` with the trained weights to evaluate the model on the test set.
 ```bash
 # default config inside validate.py
 python validate.py
 ```
 
+**Note:** In particular, **APs** (small object detection performance) is calculated by [COCOAPI](https://github.com/cocodataset/cocoapi).
 
 ## Citations
 
