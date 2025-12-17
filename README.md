@@ -118,11 +118,11 @@ If you utilize this code in your research, please cite our paper:
 ```bibtex
 @ARTICLE{11263950,
 author={Pan, Ruitao and Wang, Chenxi and Han, Bin and Zhang, Xinyu and Zhai, Zhi and Liu, Jinxin and Liu, Naijin and Chen, Xuefeng},
-journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-title={M2Former: Enhancing Event-Based RT-DETR for Robust and Lightweight Space Object Detection}, 
-year={2025},
-volume={63},
-pages={1-16},
-keywords={Space vehicles;Cameras;YOLO;Event detection;Transformers;Data augmentation;Computer architecture;Computational modeling;Training;Lighting;Event-based vision;multiscale MetaFormer design;real-time detection Transformer (RT-DETR);space object detection},
-doi={10.1109/TGRS.2025.3636122}}
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+  title={M2Former: Enhancing Event-Based RT-DETR for Robust and Lightweight Space Object Detection}, 
+  year={2025},
+  volume={63},
+  pages={1-16},
+  keywords={Space vehicles;Cameras;YOLO;Event detection;Transformers;Data augmentation;Computer architecture;Computational modeling;Training;Lighting;Event-based vision;multiscale MetaFormer design;real-time detection Transformer (RT-DETR);space object detection},
+  doi={10.1109/TGRS.2025.3636122}}
 ```
