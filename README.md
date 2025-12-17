@@ -109,7 +109,7 @@ python validate.py
 **Notes:** 
 - In particular, **APs** (average precision of small object) is calculated by [COCOAPI](https://github.com/cocodataset/cocoapi).
 - In our paper, all reported quantitative results are evaluated on the validation split to enable quick comparison across a large number of experiments, 
-and we strongly encourage future work to complement the E-SPARK benchmark with evaluations on the test split.
+and we strongly encourage future work to conduct evaluations on the test split to construct a benchmark of the E-SPARK dataset.
 
 
 ## Citations
