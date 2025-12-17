@@ -106,8 +106,8 @@ python map_metric.py --model_dir /path/to/model_training_dir
 python validate.py
 ```
 
-**Note:** 
-- In particular, **APs** (small object detection performance) is calculated by [COCOAPI](https://github.com/cocodataset/cocoapi).
+**Notes:** 
+- In particular, **APs** (average precision of small object) is calculated by [COCOAPI](https://github.com/cocodataset/cocoapi).
 - In our paper, all reported quantitative results are evaluated on the validation split to enable quick comparison across a large number of experiments, 
 and we strongly encourage future work to complement the E-SPARK benchmark with evaluations on the test split.
 
