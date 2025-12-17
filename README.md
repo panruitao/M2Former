@@ -29,7 +29,7 @@ The experiments in this project are conducted on the **E-SPARK** dataset. Please
 
 ## 4. Pretrained Models
 
-We provide several pretrained models that can be directly used for inference with **`predict.py`**:
+We provide several pretrained models that can be directly used for inference with `predict.py`:
 <table>
   <tr>
     <td><a href="https://drive.google.com/file/d/1i-ENNkdQppkNj898WfxqBavr45fCkerM/view?usp=drive_link">
