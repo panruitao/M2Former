@@ -117,7 +117,7 @@ and we strongly encourage future work to conduct evaluations on the test split t
 If you utilize this code in your research, please cite our paper:
 ```bibtex
 @ARTICLE{11263950,
-author={Pan, Ruitao and Wang, Chenxi and Han, Bin and Zhang, Xinyu and Zhai, Zhi and Liu, Jinxin and Liu, Naijin and Chen, Xuefeng},
+  author={Pan, Ruitao and Wang, Chenxi and Han, Bin and Zhang, Xinyu and Zhai, Zhi and Liu, Jinxin and Liu, Naijin and Chen, Xuefeng},
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   title={M2Former: Enhancing Event-Based RT-DETR for Robust and Lightweight Space Object Detection}, 
   year={2025},
