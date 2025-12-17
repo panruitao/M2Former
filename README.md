@@ -95,22 +95,34 @@ python train_yolo.py
 
 ## 6. Model Validation
 
-(1) Use `map_metric.py` to parse the training log (`results.csv`) and report the epoch with the highest AP@50:95.
+(1) Use `map_metric.py` to parse the training log (`results.csv`) and report the epoch with the highest AP@50:95 on the validation split.
 ```bash
 python map_metric.py --model_dir /path/to/model_training_dir
 ```
 
-(2) Run `val.py` with the trained weights to evaluate the model on the test set.
+(2) Run `val.py` with the trained weights to evaluate the model on the test split.
 ```bash
 # default config inside validate.py
 python validate.py
 ```
 
-**Note:** In particular, **APs** (small object detection performance) is calculated by [COCOAPI](https://github.com/cocodataset/cocoapi).
+**Note:** 
+- In particular, **APs** (small object detection performance) is calculated by [COCOAPI](https://github.com/cocodataset/cocoapi).
+- In our paper, all reported quantitative results are evaluated on the validation split to enable quick comparison across a large number of experiments, 
+and we strongly encourage future work to complement the E-SPARK benchmark with evaluations on the test split.
+
 
 ## Citations
 
 If you utilize this code in your research, please cite our paper:
 ```bibtex
-Coming soon.
+@ARTICLE{11263950,
+  author={Pan, Ruitao and Wang, Chenxi and Han, Bin and Zhang, Xinyu and Zhai, Zhi and Liu, Jinxin and Liu, Naijin and Chen, Xuefeng},
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+  title={M2Former: Enhancing Event-Based RT-DETR for Robust and Lightweight Space Object Detection}, 
+  year={2025},
+  volume={63},
+  pages={1-16},
+  keywords={Space vehicles;Cameras;YOLO;Event detection;Transformers;Data augmentation;Computer architecture;Computational modeling;Training;Lighting;Event-based vision;multiscale MetaFormer design;real-time detection Transformer (RT-DETR);space object detection},
+  doi={10.1109/TGRS.2025.3636122}}
 ```
